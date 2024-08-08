@@ -6,4 +6,4 @@ class Solution:
                 nums.remove(val) 
             else:
                 idx = idx + 1        
-        return len(nums)        
+        return idx        
