@@ -11,6 +11,4 @@ class Solution:
                 j += 1
                 i += 1
 
-        nums1.sort()
-
-        print(nums1)        
+        nums1.sort()       
