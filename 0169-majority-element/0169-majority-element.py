@@ -4,6 +4,9 @@ class Solution:
         num = 0
         num_elements = len(nums)
 
+        if num_elements == 1:
+            return nums[0]
+             
         for idx in range(0, num_elements):
             if nums[idx] in counter.keys():
                 counter[nums[idx]] += 1
