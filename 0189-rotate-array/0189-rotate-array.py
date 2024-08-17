@@ -10,10 +10,10 @@ class Solution:
         num_times_to_rotate = k % num_elements
         times_rotated = 0
         temp_list = []
-        for i in range(0, num_elements - k):
+        for i in range(0, num_elements - num_times_to_rotate):
             temp_list.append(nums[i])
             
-        del nums[0:num_elements - k]
+        del nums[0:num_elements - num_times_to_rotate]
         for j in range(0, len(temp_list)):
             nums.append(temp_list[j])
         
