@@ -28,7 +28,9 @@ class RandomizedSet:
 
     def getRandom(self) -> int:
         random_int = random.randint(0,self.num_elements - 1)
-        return random.choice(self.list_container)
+        values_list = list(self.hashmap.keys())
+        return values_list[random_int]   
+        #return random.choice(self.list_container)
 
 
 # Your RandomizedSet object will be instantiated and called as such:
