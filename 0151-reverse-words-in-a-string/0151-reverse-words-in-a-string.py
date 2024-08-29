@@ -2,7 +2,7 @@ class Solution:
     def reverseWords(self, s: str) -> str:
         i: int = len(s) - 1
         reversed_string: str = ""
-        while i > 0:
+        while i >= 0:
             left: int = i
             right: int = i
 
