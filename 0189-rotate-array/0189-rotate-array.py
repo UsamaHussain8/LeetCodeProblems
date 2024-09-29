@@ -1,20 +1,23 @@
 class Solution:
-    def rotate(self, nums, k):
+    def rotate(self, nums: List[int], k: int) -> None:
         """
         Do not return anything, modify nums in-place instead.
         """
-        num_elements = len(nums)
-        if num_elements < 2 or k == num_elements:
+        num_times_to_rotate = k % len(nums)
+        if num_times_to_rotate == 0:
             return
 
-        num_times_to_rotate = k % num_elements
-        times_rotated = 0
-        temp_list = []
-        for i in range(0, num_elements - num_times_to_rotate):
-            temp_list.append(nums[i])
-            
-        del nums[0:num_elements - num_times_to_rotate]
-        for j in range(0, len(temp_list)):
-            nums.append(temp_list[j])
+        left, right = 0, len(nums) - 1
+        self.reverse(nums, left, right)
         
-        return nums
+        left, right = 0, num_times_to_rotate - 1
+        self.reverse(nums, left, right)
+
+        left, right = num_times_to_rotate, len(nums) - 1
+        self.reverse(nums, left, right)
+            
+    def reverse(self, nums: List[int], left: int, right: int):
+        while left < right:
+            nums[left], nums[right] = nums[right], nums[left]
+            left += 1
+            right -= 1
