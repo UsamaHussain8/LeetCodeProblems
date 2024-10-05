@@ -6,15 +6,17 @@ class Solution:
             return 1
             
         left = 0
-        len_sub = 1
-        right = left + 1
+        len_sub = 0
+        right = 0
+        substr = set()
         
         while right < len(s):
-            substr = s[left: right]
-            for char in substr:
-                if s[right] == char:
-                    len_sub = max(len_sub, right - left)
-                    left = right
+            while s[right] in substr:
+                substr.remove(s[left])
+                left += 1
+
+            substr.add(s[right])
+            len_sub = max(len_sub, right - left + 1)
             right += 1
 
         return len_sub
