@@ -7,7 +7,5 @@ class Solution:
                 if idx - freq_counter[val] <= k:
                     return True
             freq_counter[val] = idx
-        
-        print(freq_counter)
 
         return False
