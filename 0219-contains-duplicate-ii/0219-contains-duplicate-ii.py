@@ -1,10 +1,13 @@
 class Solution:
-    def containsNearbyDuplicate(self, nums: list[int], k: int) -> bool:
-        hash = {}
-        for i in range(len(nums)):
-            if nums[i] in hash and (i - hash[nums[i]]) <= k:
-                return True
-            hash[nums[i]] = i
+    def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
+        freq_counter = {}
+
+        for idx, val in enumerate(nums):
+            if val in freq_counter:
+                if idx - freq_counter[val] <= k:
+                    return True
+            freq_counter[val] = idx
+        
+        print(freq_counter)
 
         return False
-
