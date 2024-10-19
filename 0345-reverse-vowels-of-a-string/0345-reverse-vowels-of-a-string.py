@@ -15,3 +15,4 @@ class Solution:
                 right -= 1
 
         return "".join(list_s)
+        
